@@ -5,7 +5,27 @@ body {
     background-color: black;
     color: white;
 }
-
+#nav{
+    height: 80px;
+    width:100%;
+    /*background-color:red;*/
+    border-bottom: 2px solid #dadada;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#nav h1{
+    text-transform: uppercase;
+}
+#nav-part2{
+    display: flex;
+    align-items: center;
+    gap: 50px ;
+}
+#nav h3{
+    text-transform: uppercase;
+    font-weight: 500;
+}
 #scroller {
     white-space: nowrap;
     overflow-x: hidden;
@@ -91,13 +111,13 @@ ul li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: black; /* Candidate name in black color */
-    font-weight: bold; /* Optional: Makes the name stand out */
+    color: black;
+    font-weight: bold;
 }
 
 ul li:hover {
-    background-color: #e0e0e0; /* Light gray on hover */
-    cursor: pointer; /* Change cursor to pointer when hovering */
+    background-color: #e0e0e0;
+    cursor: pointer;
 }
 
 .hidden {
