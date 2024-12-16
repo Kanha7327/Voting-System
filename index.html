@@ -4,81 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Voting System</title>
-    <link
-      rel="shortcut icon"
-      href="https://sidcupfamilygolf.com/wp-content/themes/puttosaurus/favicons/favicon-32x32.png"
-      type="image/x-icon"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
+    <link rel="shortcut icon" href="https://sidcupfamilygolf.com/wp-content/themes/puttosaurus/favicons/favicon-32x32.png" type="image/x-icon"/>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet"/>
     <link rel="stylesheet" href="Abhisek.css">
 </head>
 <body>
-    <!-- Homepage -->
-    <div id="scroller">
-        <div id="scroller-in">
-          <!--<h4>ABHISHEK</h4>-->
-          <h4>VOTING</h4>
-          <h4>SYSTEM</h4>
-          <h4>VERSION</h4>
-          <h4>2.0</h4>
-        </div>
-        <div id="scroller-in">
-          <!--<h4>ABHISHEK</h4>-->
-          <h4>VOTING</h4>
-          <h4>SYSTEM</h4>
-          <h4>VERSION</h4>
-          <h4>2.0</h4>
-        </div>
-    <div id="app">
-        <!--<h1>Voting System</h1>-->
-        <button onclick="navigate('login')">Admin Panel</button>
-        <button onclick="navigate('voter')">Voter Panel</button>
+   <!-- Homepage -->
+   <div id="nav">
+    <h1>Election commission</h1>
+    <div id="nav-part2">
+        <h3>service</h3>
+        <h3>about us</h3>
+        <h3>cases</h3>
     </div>
-
-    <!-- Admin Login Panel -->
-    <div id="login-panel" class="hidden">
-        <h2>Admin Login</h2>
-        <input id="admin-username" type="text" placeholder="Username">
-        <input id="admin-password" type="password" placeholder="Password">
-        <button onclick="adminLogin()">Login</button>
-        <p id="login-error" style="color: red; display: none;">Invalid credentials. Please try again.</p>
+    
+   </div>
+   <div id="scroller">
+    <div id="scroller-in">
+        <h4>VOTING</h4>
+        <h4>SYSTEM</h4>
+        <h4>VERSION</h4>
+        <h4>2.0</h4>
     </div>
-
-    <!-- Admin Panel -->
-    <div id="admin-panel" class="hidden">
-        <h2>Admin Panel</h2>
-        <input id="candidate-name" type="text" placeholder="Candidate Name">
-        <button onclick="addCandidate()">Add Candidate</button>
-        <button onclick="resetCandidates()">Reset Candidates</button>
-        <h3>Registered Candidates</h3>
-        <ul id="candidates-list"></ul>
-        <button onclick="showResults()">View Results</button>
-        <button onclick="logoutAdmin()">Logout</button>
+    <div id="scroller-in">
+        <h4>VOTING</h4>
+        <h4>SYSTEM</h4>
+        <h4>VERSION</h4>
+        <h4>2.0</h4>
     </div>
+</div>
 
-    <!-- Voter Panel -->
-    <div id="voter-panel" class="hidden">
-        <h2>Voter Panel</h2>
-        <ul id="vote-list"></ul>
-        <button onclick="resetVotes()">Reset Votes</button>
-        <button onclick="navigate('app')">Go Back</button>
-    </div>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"
-      integrity="sha512-qF6akR/fsZAB4Co1QDDnUXWnaQseLGXoniuSuSlPQK6+aWhlMZcHzkasCSlnWoe+TJuudlka1/IQ01Dnhgq95g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollTrigger.min.js"
-      integrity="sha512-IHDCHrefnBT3vOCsvdkMvJF/MCPz/nBauQLzJkupa4Gn4tYg5a6VGyzIrjo6QAUy3We5HFOZUlkUpP0dkgE60A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+<div id="app">
+    <button onclick="navigate('login')">Admin Panel</button>
+    <button onclick="navigate('voter-login')">Voter Panel</button>
+</div>
 
+<!-- Admin Login Panel -->
+<div id="login-panel" class="hidden">
+    <h2>Admin Login</h2>
+    <input id="admin-username" type="text" placeholder="Username">
+    <input id="admin-password" type="password" placeholder="Password">
+    <button onclick="adminLogin()">Login</button>
+    <p id="login-error" style="color: red; display: none;">Invalid credentials. Please try again.</p>
+</div>
+
+<!-- Admin Panel -->
+<div id="admin-panel" class="hidden">
+    <h2>Admin Panel</h2>
+    <input id="candidate-name" type="text" placeholder="Candidate Name">
+    <button onclick="addCandidate()">Add Candidate</button>
+    <button onclick="resetCandidates()">Reset Candidates</button>
+    <h3>Registered Candidates</h3>
+    <ul id="candidates-list"></ul>
+    <button onclick="showResults()">View Results</button>
+    <button onclick="logoutAdmin()">Logout</button>
+</div>
+
+<!-- Voter Login Panel -->
+<div id="voter-login-panel" class="hidden">
+    <h2>Voter Login</h2>
+    <input id="voter-username" type="text" placeholder="Voter ID">
+    <input id="voter-password" type="password" placeholder="Password">
+    <button onclick="voterLogin()">Login</button>
+    <p id="voter-login-error" style="color: red; display: none;">Invalid credentials. Please try again.</p>
+    <p>Don't have an account? <a href="javascript:void(0);" onclick="navigate('voter-signup')">Sign up</a></p>
+</div>
+
+<!-- Voter Sign Up Panel -->
+<div id="voter-signup-panel" class="hidden">
+    <h2>Voter Sign Up</h2>
+    <input id="voter-signup-username" type="text" placeholder="Voter ID">
+    <input id="voter-signup-password" type="password" placeholder="Password">
+    <input id="voter-signup-confirm-password" type="password" placeholder="Confirm Password">
+    <button onclick="voterSignUp()">Sign Up</button>
+    <p id="voter-signup-error" style="color: red; display: none;">Passwords do not match. Please try again.</p>
+    <p>Already have an account? <a href="javascript:void(0);" onclick="navigate('voter-login')">Login</a></p>
+</div>
+
+<!-- Voter Panel -->
+<div id="voter-panel" class="hidden">
+    <h2>Voter Panel</h2>
+    <input id="voter-name" type="text" placeholder="Enter Your Name" />
+    <ul id="vote-list"></ul>
+    <!--<button onclick="resetVotes()">Reset Votes</button>-->
+    <button onclick="navigate('app')">Go Back</button>
+</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollTrigger.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="Abhisek.js"></script>
 </body>
 </html>
